@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Экспорт{% endblock %}
+
+{% block main_content %}
+  <h1>Экспорт задач</h1>
+  <p>На вашу почту придёт емейл с задачами. Уточните список.</p>
+  <form action="." method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><button class="add" type="submit">Жмяк</button></p>
+  </form>
+{% endblock %}

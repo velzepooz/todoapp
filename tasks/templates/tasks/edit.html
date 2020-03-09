@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Изменить задачу{% endblock %}
+
+{% block main_content %}
+  <h1>Поменять задачу</h1>
+  <form action="{% url "tasks:edit" task.pk %}" method="post">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <p><button class="add" type="submit">Сохранить</button></p>
+  </form>
+{% endblock %}
